@@ -17,15 +17,6 @@ API → Python → Local Storage → AWS S3
 - Cloud integration (S3)
 - Local backup storage
 
-## 🚀 How to Run
-1. Install dependencies
-2. Add AWS credentials in config.py
-3. Run: python main.py
 
-## 📈 Future Improvements
-- Add Snowflake Data Warehouse
-- Add Airflow Scheduling
-- Add Real-time streaming (Kafka)
 
-## 💡 Author
-Cloud Data Engineering Portfolio Project
+
