@@ -1,0 +1,11 @@
+import os
+
+def save_locally(df):
+    print("Saving locally...")
+
+    os.makedirs("data", exist_ok=True)
+    file_path = "data/bitcoin_data.csv"
+
+    df.to_csv(file_path, index=False)
+
+    print(f"Saved locally at {file_path}")
