@@ -1,0 +1,24 @@
+import boto3
+import io
+from config.config import AWS_ACCESS_KEY, AWS_SECRET_KEY, AWS_BUCKET, REGION
+
+def upload_to_s3(df):
+    print("Uploading to S3...")
+
+    csv_buffer = io.StringIO()
+    df.to_csv(csv_buffer, index=False)
+
+    s3 = boto3.client(
+        "s3",
+        aws_access_key_id=AWS_ACCESS_KEY,
+        aws_secret_access_key=AWS_SECRET_KEY,
+        region_name=REGION
+    )
+
+    s3.put_object(
+        Bucket=AWS_BUCKET,
+        Key="bitcoin/bitcoin_data.csv",
+        Body=csv_buffer.getvalue()
+    )
+
+    print("Upload successful")
